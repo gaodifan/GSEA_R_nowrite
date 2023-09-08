@@ -99,7 +99,7 @@
 #' @importFrom grDevices colors dev.cur dev.off pdf rainbow savePlot
 #' @importFrom graphics axis image layout legend lines par plot points text
 #' @importFrom stats density dist hclust median pnorm sd
-#' @importFrom utils read.delim read.table write.table
+#' @importFrom utils read.delim read.table #write.table
 #' @importFrom rlang .data
 #' @import dplyr
 #'
@@ -127,83 +127,66 @@ GSEA <- function(input.ds, input.cls, input.chip = "NOCHIP", gene.ann = "", gs.d
    collapse = "")
   
   time.string <- as.character(random.seed)
-  write(paste("Run of GSEA on ", time.string), file = filename)
+  #write(paste("Run of GSEA on ", time.string), file = filename)
   
   if (is.data.frame(input.ds)) {
-   # write(paste('input.ds=', quote(input.ds), sep=' '), file=filename, append=T)
+   # #write(paste('input.ds=', quote(input.ds), sep=' '), file=filename, append=T)
   } else {
-   write(paste("input.ds =", input.ds, sep = " "), file = filename, append = T)
+   #write(paste("input.ds =", input.ds, sep = " "), file = filename, append = T)
   }
   if (gsea.type == "GSEA") {
    if (is.list(input.cls)) {
-    # write(paste('input.cls=', input.cls, sep=' '), file=filename, append=T)
+    # #write(paste('input.cls=', input.cls, sep=' '), file=filename, append=T)
    } else {
-    write(paste("input.cls =", input.cls, sep = " "), file = filename, 
-      append = T)
+    #write(paste("input.cls =", input.cls, sep = " "), file = filename, append = T)
    }
   }
   if (is.data.frame(gene.ann)) {
-   # write(paste('gene.ann =', gene.ann, sep=' '), file=filename, append=T)
+   # #write(paste('gene.ann =', gene.ann, sep=' '), file=filename, append=T)
   } else {
-   write(paste("gene.ann =", gene.ann, sep = " "), file = filename, append = T)
+   #write(paste("gene.ann =", gene.ann, sep = " "), file = filename, append = T)
   }
   if (regexpr(pattern = ".gmt", gs.db[1]) == -1) {
-   # write(paste('gs.db=', gs.db, sep=' '), file=filename, append=T)
+   # #write(paste('gs.db=', gs.db, sep=' '), file=filename, append=T)
   } else {
-   write(paste("gs.db =", gs.db, sep = " "), file = filename, append = T)
+   #write(paste("gs.db =", gs.db, sep = " "), file = filename, append = T)
   }
   if (is.data.frame(gs.ann)) {
-   # write(paste('gene.ann =', gene.ann, sep=' '), file=filename, append=T)
+   # #write(paste('gene.ann =', gene.ann, sep=' '), file=filename, append=T)
   } else {
-   write(paste("gs.ann =", gs.ann, sep = " "), file = filename, append = T)
+   #write(paste("gs.ann =", gs.ann, sep = " "), file = filename, append = T)
   }
   if (gsea.type == "GSEA" & collapse.dataset == TRUE) {
    if (is.data.frame(input.chip)) {
-    # write(paste('input.chip=', quote(input.chip), sep=' '), file=filename,
-    # append=T)
+    # #write(paste('input.chip=', quote(input.chip), sep=' '), file=filename, append=T)
    } else {
-    write(paste("input.chip =", input.chip, sep = " "), file = filename, 
-      append = T)
+    #write(paste("input.chip =", input.chip, sep = " "), file = filename, append = T)
    }
-   write(paste("collapse.mode =", collapse.mode, sep = " "), file = filename, 
-    append = T)
+   #write(paste("collapse.mode =", collapse.mode, sep = " "), file = filename, append = T)
   }
-  write(paste("output.directory =", output.directory, sep = " "), file = filename, 
-   append = T)
-  write(paste("doc.string = ", doc.string, sep = " "), file = filename, append = T)
-  write(paste("reshuffling.type =", reshuffling.type, sep = " "), file = filename, 
-   append = T)
-  write(paste("nperm =", nperm, sep = " "), file = filename, append = T)
-  write(paste("weighted.score.type =", weighted.score.type, sep = " "), file = filename, 
-   append = T)
-  write(paste("nom.p.val.threshold =", nom.p.val.threshold, sep = " "), file = filename, 
-   append = T)
-  write(paste("fwer.p.val.threshold =", fwer.p.val.threshold, sep = " "), file = filename, 
-   append = T)
-  write(paste("fdr.q.val.threshold =", fdr.q.val.threshold, sep = " "), file = filename, 
-   append = T)
-  write(paste("topgs =", topgs, sep = " "), file = filename, append = T)
-  write(paste("adjust.FDR.q.val =", adjust.FDR.q.val, sep = " "), file = filename, 
-   append = T)
-  write(paste("gs.size.threshold.min =", gs.size.threshold.min, sep = " "), 
-   file = filename, append = T)
-  write(paste("gs.size.threshold.max =", gs.size.threshold.max, sep = " "), 
-   file = filename, append = T)
-  write(paste("reverse.sign =", reverse.sign, sep = " "), file = filename, 
-   append = T)
-  write(paste("preproc.type =", preproc.type, sep = " "), file = filename, 
-   append = T)
-  write(paste("random.seed =", random.seed, sep = " "), file = filename, append = T)
-  write(paste("perm.type =", perm.type, sep = " "), file = filename, append = T)
+  #write(paste("output.directory =", output.directory, sep = " "), file = filename, append = T)
+  #write(paste("doc.string = ", doc.string, sep = " "), file = filename, append = T)
+  #write(paste("reshuffling.type =", reshuffling.type, sep = " "), file = filename, append = T)
+  #write(paste("nperm =", nperm, sep = " "), file = filename, append = T)
+  #write(paste("weighted.score.type =", weighted.score.type, sep = " "), file = filename, append = T)
+  #write(paste("nom.p.val.threshold =", nom.p.val.threshold, sep = " "), file = filename, append = T)
+  #write(paste("fwer.p.val.threshold =", fwer.p.val.threshold, sep = " "), file = filename, append = T)
+  #write(paste("fdr.q.val.threshold =", fdr.q.val.threshold, sep = " "), file = filename,  append = T)
+  #write(paste("topgs =", topgs, sep = " "), file = filename, append = T)
+  #write(paste("adjust.FDR.q.val =", adjust.FDR.q.val, sep = " "), file = filename, append = T)
+  #write(paste("gs.size.threshold.min =", gs.size.threshold.min, sep = " "),file = filename, append = T)
+  #write(paste("gs.size.threshold.max =", gs.size.threshold.max, sep = " "), file = filename, append = T)
+  #write(paste("reverse.sign =", reverse.sign, sep = " "), file = filename, append = T)
+  #write(paste("preproc.type =", preproc.type, sep = " "), file = filename, append = T)
+  #write(paste("random.seed =", random.seed, sep = " "), file = filename, append = T)
+  #write(paste("perm.type =", perm.type, sep = " "), file = filename, append = T)
   if (gsea.type == "GSEA") {
-   write(paste("rank.metric = ", rank.metric, sep = " "), file = filename, 
-    append = T)
+   #write(paste("rank.metric = ", rank.metric, sep = " "), file = filename, append = T)
   } else if (gsea.type == "preranked") {
-   write(paste("rank.metric = ", "preranked", sep = " "), file = filename, 
-    append = T)
+   #write(paste("rank.metric = ", "preranked", sep = " "), file = filename, append = T)
   }
-  write(paste("fraction =", fraction, sep = " "), file = filename, append = T)
-  write(paste("replace =", replace, sep = " "), file = filename, append = T)
+  #write(paste("fraction =", fraction, sep = " "), file = filename, append = T)
+  #write(paste("replace =", replace, sep = " "), file = filename, append = T)
  }
  
  # Start of GSEA methodology
@@ -754,33 +737,27 @@ GSEA <- function(input.ds, input.cls, input.chip = "NOCHIP", gene.ann = "", gs.d
  if (save.intermediate.results == T) {
   
   filename <- paste(output.directory, doc.string, ".phi.txt", sep = "", collapse = "")
-  write.table(phi, file = filename, quote = F, col.names = F, row.names = F, 
-   sep = "\t")
+  #write.table(phi, file = filename, quote = F, col.names = F, row.names = F, sep = "\t")
   
   filename <- paste(output.directory, doc.string, ".obs.phi.txt", sep = "", 
    collapse = "")
-  write.table(obs.phi, file = filename, quote = F, col.names = F, row.names = F, 
-   sep = "\t")
+  #write.table(obs.phi, file = filename, quote = F, col.names = F, row.names = F, sep = "\t")
   
   filename <- paste(output.directory, doc.string, ".phi.norm.txt", sep = "", 
    collapse = "")
-  write.table(phi.norm, file = filename, quote = F, col.names = F, row.names = F, 
-   sep = "\t")
+  #write.table(phi.norm, file = filename, quote = F, col.names = F, row.names = F, sep = "\t")
   
   filename <- paste(output.directory, doc.string, ".obs.phi.norm.txt", sep = "", 
    collapse = "")
-  write.table(obs.phi.norm, file = filename, quote = F, col.names = F, row.names = F, 
-   sep = "\t")
+  #write.table(obs.phi.norm, file = filename, quote = F, col.names = F, row.names = F, sep = "\t")
   
   filename <- paste(output.directory, doc.string, ".Obs.ES.txt", sep = "", 
    collapse = "")
-  write.table(Obs.ES, file = filename, quote = F, col.names = F, row.names = F, 
-   sep = "\t")
+  #write.table(Obs.ES, file = filename, quote = F, col.names = F, row.names = F, sep = "\t")
   
   filename <- paste(output.directory, doc.string, ".Obs.ES.norm.txt", sep = "", 
    collapse = "")
-  write.table(Obs.ES.norm, file = filename, quote = F, col.names = F, row.names = F, 
-   sep = "\t")
+  #write.table(Obs.ES.norm, file = filename, quote = F, col.names = F, row.names = F, sep = "\t")
  }
  
  # Compute FWER p-vals
@@ -978,14 +955,12 @@ GSEA <- function(input.ds, input.cls, input.chip = "NOCHIP", gene.ann = "", gs.d
   if (phen1.rows > 0) {
    filename <- paste(output.directory, doc.string, ".SUMMARY.RESULTS.REPORT.", 
     phen1, ".txt", sep = "", collapse = "")
-   write.table(report.phen1, file = filename, quote = F, row.names = F, 
-    sep = "\t")
+   #write.table(report.phen1, file = filename, quote = F, row.names = F, sep = "\t")
   }
   if (phen2.rows > 0) {
    filename <- paste(output.directory, doc.string, ".SUMMARY.RESULTS.REPORT.", 
     phen2, ".txt", sep = "", collapse = "")
-   write.table(report.phen2, file = filename, quote = F, row.names = F, 
-    sep = "\t")
+   #write.table(report.phen2, file = filename, quote = F, row.names = F, sep = "\t")
   }
  }
  
@@ -1290,8 +1265,7 @@ GSEA <- function(input.ds, input.cls, input.chip = "NOCHIP", gene.ann = "", gs.d
       
       filename <- paste(output.directory, doc.string, ".", gs.names[i], 
      ".report.", phen.tag, ".", loc, ".txt", sep = "", collapse = "")
-      write.table(gene.report, file = filename, quote = FALSE, row.names = FALSE, 
-     sep = "\t", na = "")
+      #write.table(gene.report, file = filename, quote = FALSE, row.names = FALSE, sep = "\t", na = "")
       
       gs.filename <- paste(output.directory, doc.string, ".", gs.names[i], 
      ".plot.", phen.tag, ".", loc, ".pdf", sep = "", collapse = "")
